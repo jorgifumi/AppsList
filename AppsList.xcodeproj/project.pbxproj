@@ -7,21 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6823CA811CAD587E00DAE237 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6823CA741CAD583300DAE237 /* Freddy.framework */; };
 		6885AF521CAAE52300AE3392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6885AF511CAAE52300AE3392 /* AppDelegate.swift */; };
 		6885AF541CAAE52300AE3392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6885AF531CAAE52300AE3392 /* ViewController.swift */; };
-		6885AF571CAAE52300AE3392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6885AF551CAAE52300AE3392 /* Main.storyboard */; };
 		6885AF591CAAE52300AE3392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6885AF581CAAE52300AE3392 /* Assets.xcassets */; };
 		6885AF5C1CAAE52300AE3392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6885AF5A1CAAE52300AE3392 /* LaunchScreen.storyboard */; };
+		6885AF641CAAF67D00AE3392 /* topfreeapps.json in Resources */ = {isa = PBXBuildFile; fileRef = 6885AF631CAAF67D00AE3392 /* topfreeapps.json */; };
+		689558551CAC2E4400CF3C92 /* AppsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689558531CAC2E4400CF3C92 /* AppsListTableViewController.swift */; };
+		689558561CAC2E4400CF3C92 /* AppsListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689558541CAC2E4400CF3C92 /* AppsListTableViewController.xib */; };
+		689558591CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689558571CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.swift */; };
+		6895585A1CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689558581CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.xib */; };
+		6895585D1CAC342800CF3C92 /* AppsGrillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895585B1CAC342800CF3C92 /* AppsGrillCell.swift */; };
+		6895585E1CAC342800CF3C92 /* AppsGrillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6895585C1CAC342800CF3C92 /* AppsGrillCell.xib */; };
+		689558611CAC344300CF3C92 /* AppsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895585F1CAC344300CF3C92 /* AppsListCell.swift */; };
+		689558621CAC344300CF3C92 /* AppsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689558601CAC344300CF3C92 /* AppsListCell.xib */; };
+		689558661CAC3E1F00CF3C92 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689558651CAC3E1F00CF3C92 /* App.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6823CA731CAD583300DAE237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF3E1C23612000D77BF1;
+			remoteInfo = Freddy;
+		};
+		6823CA751CAD583300DAE237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF471C23612000D77BF1;
+			remoteInfo = FreddyTests;
+		};
+		6823CA771CAD583300DAE237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF1F1C23610B00D77BF1;
+			remoteInfo = MobileFreddy;
+		};
+		6823CA791CAD583300DAE237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF291C23610B00D77BF1;
+			remoteInfo = MobileFreddyTests;
+		};
+		6823CA7B1CAD583300DAE237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF5A1C23612900D77BF1;
+			remoteInfo = TVFreddy;
+		};
+		6823CA7D1CAD583300DAE237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF631C23612A00D77BF1;
+			remoteInfo = TVFreddyTests;
+		};
+		6823CA7F1CAD583300DAE237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF761C23613200D77BF1;
+			remoteInfo = NanoFreddy;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6823CA691CAD583300DAE237 /* Freddy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Freddy.xcodeproj; path = Vendor/Freddy/Freddy.xcodeproj; sourceTree = "<group>"; };
 		6885AF4E1CAAE52300AE3392 /* AppsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6885AF511CAAE52300AE3392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6885AF531CAAE52300AE3392 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6885AF561CAAE52300AE3392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6885AF581CAAE52300AE3392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6885AF5B1CAAE52300AE3392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6885AF5D1CAAE52300AE3392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6885AF631CAAF67D00AE3392 /* topfreeapps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topfreeapps.json; sourceTree = "<group>"; };
+		689558531CAC2E4400CF3C92 /* AppsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsListTableViewController.swift; sourceTree = "<group>"; };
+		689558541CAC2E4400CF3C92 /* AppsListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsListTableViewController.xib; sourceTree = "<group>"; };
+		689558571CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsGrillCollectionViewController.swift; sourceTree = "<group>"; };
+		689558581CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsGrillCollectionViewController.xib; sourceTree = "<group>"; };
+		6895585B1CAC342800CF3C92 /* AppsGrillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsGrillCell.swift; sourceTree = "<group>"; };
+		6895585C1CAC342800CF3C92 /* AppsGrillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsGrillCell.xib; sourceTree = "<group>"; };
+		6895585F1CAC344300CF3C92 /* AppsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsListCell.swift; sourceTree = "<group>"; };
+		689558601CAC344300CF3C92 /* AppsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsListCell.xib; sourceTree = "<group>"; };
+		689558651CAC3E1F00CF3C92 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,15 +101,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6823CA811CAD587E00DAE237 /* Freddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6823CA6A1CAD583300DAE237 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6823CA741CAD583300DAE237 /* Freddy.framework */,
+				6823CA761CAD583300DAE237 /* FreddyTests.xctest */,
+				6823CA781CAD583300DAE237 /* Freddy.framework */,
+				6823CA7A1CAD583300DAE237 /* MobileFreddyTests.xctest */,
+				6823CA7C1CAD583300DAE237 /* Freddy.framework */,
+				6823CA7E1CAD583300DAE237 /* TVFreddyTests.xctest */,
+				6823CA801CAD583300DAE237 /* Freddy.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6823CA821CAD5C9000DAE237 /* TopFreeApps */ = {
+			isa = PBXGroup;
+			children = (
+				689558651CAC3E1F00CF3C92 /* App.swift */,
+			);
+			name = TopFreeApps;
+			sourceTree = "<group>";
+		};
 		6885AF451CAAE52300AE3392 = {
 			isa = PBXGroup;
 			children = (
+				6823CA691CAD583300DAE237 /* Freddy.xcodeproj */,
 				6885AF501CAAE52300AE3392 /* AppsList */,
 				6885AF4F1CAAE52300AE3392 /* Products */,
 			);
@@ -54,14 +150,71 @@
 		6885AF501CAAE52300AE3392 /* AppsList */ = {
 			isa = PBXGroup;
 			children = (
+				6823CA821CAD5C9000DAE237 /* TopFreeApps */,
+				689558431CAC274800CF3C92 /* AppsList */,
+				6885AF651CAAF69200AE3392 /* Resources */,
 				6885AF511CAAE52300AE3392 /* AppDelegate.swift */,
 				6885AF531CAAE52300AE3392 /* ViewController.swift */,
-				6885AF551CAAE52300AE3392 /* Main.storyboard */,
-				6885AF581CAAE52300AE3392 /* Assets.xcassets */,
-				6885AF5A1CAAE52300AE3392 /* LaunchScreen.storyboard */,
 				6885AF5D1CAAE52300AE3392 /* Info.plist */,
 			);
 			path = AppsList;
+			sourceTree = "<group>";
+		};
+		6885AF651CAAF69200AE3392 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6885AF581CAAE52300AE3392 /* Assets.xcassets */,
+				6885AF5A1CAAE52300AE3392 /* LaunchScreen.storyboard */,
+				6885AF631CAAF67D00AE3392 /* topfreeapps.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		689558431CAC274800CF3C92 /* AppsList */ = {
+			isa = PBXGroup;
+			children = (
+				689558471CAC27AC00CF3C92 /* Wireframes */,
+				689558461CAC279B00CF3C92 /* View Controllers */,
+				689558451CAC277E00CF3C92 /* View Models */,
+				689558441CAC276E00CF3C92 /* Views */,
+			);
+			name = AppsList;
+			sourceTree = "<group>";
+		};
+		689558441CAC276E00CF3C92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6895585B1CAC342800CF3C92 /* AppsGrillCell.swift */,
+				6895585C1CAC342800CF3C92 /* AppsGrillCell.xib */,
+				6895585F1CAC344300CF3C92 /* AppsListCell.swift */,
+				689558601CAC344300CF3C92 /* AppsListCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		689558451CAC277E00CF3C92 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		689558461CAC279B00CF3C92 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				689558531CAC2E4400CF3C92 /* AppsListTableViewController.swift */,
+				689558541CAC2E4400CF3C92 /* AppsListTableViewController.xib */,
+				689558571CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.swift */,
+				689558581CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		689558471CAC27AC00CF3C92 /* Wireframes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Wireframes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +264,12 @@
 			mainGroup = 6885AF451CAAE52300AE3392;
 			productRefGroup = 6885AF4F1CAAE52300AE3392 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6823CA6A1CAD583300DAE237 /* Products */;
+					ProjectRef = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6885AF4D1CAAE52300AE3392 /* AppsList */,
@@ -118,14 +277,70 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		6823CA741CAD583300DAE237 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 6823CA731CAD583300DAE237 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6823CA761CAD583300DAE237 /* FreddyTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FreddyTests.xctest;
+			remoteRef = 6823CA751CAD583300DAE237 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6823CA781CAD583300DAE237 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 6823CA771CAD583300DAE237 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6823CA7A1CAD583300DAE237 /* MobileFreddyTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MobileFreddyTests.xctest;
+			remoteRef = 6823CA791CAD583300DAE237 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6823CA7C1CAD583300DAE237 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 6823CA7B1CAD583300DAE237 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6823CA7E1CAD583300DAE237 /* TVFreddyTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TVFreddyTests.xctest;
+			remoteRef = 6823CA7D1CAD583300DAE237 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6823CA801CAD583300DAE237 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 6823CA7F1CAD583300DAE237 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		6885AF4C1CAAE52300AE3392 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6895585E1CAC342800CF3C92 /* AppsGrillCell.xib in Resources */,
 				6885AF5C1CAAE52300AE3392 /* LaunchScreen.storyboard in Resources */,
+				6895585A1CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.xib in Resources */,
 				6885AF591CAAE52300AE3392 /* Assets.xcassets in Resources */,
-				6885AF571CAAE52300AE3392 /* Main.storyboard in Resources */,
+				6885AF641CAAF67D00AE3392 /* topfreeapps.json in Resources */,
+				689558621CAC344300CF3C92 /* AppsListCell.xib in Resources */,
+				689558561CAC2E4400CF3C92 /* AppsListTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +351,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6895585D1CAC342800CF3C92 /* AppsGrillCell.swift in Sources */,
 				6885AF541CAAE52300AE3392 /* ViewController.swift in Sources */,
 				6885AF521CAAE52300AE3392 /* AppDelegate.swift in Sources */,
+				689558551CAC2E4400CF3C92 /* AppsListTableViewController.swift in Sources */,
+				689558591CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.swift in Sources */,
+				689558661CAC3E1F00CF3C92 /* App.swift in Sources */,
+				689558611CAC344300CF3C92 /* AppsListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6885AF551CAAE52300AE3392 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6885AF561CAAE52300AE3392 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6885AF5A1CAAE52300AE3392 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -200,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -240,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -253,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppsList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jf.AppsList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -264,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppsList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jf.AppsList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +503,7 @@
 				6885AF621CAAE52400AE3392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
