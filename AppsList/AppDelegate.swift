@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Freddy
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,9 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        downloadJSON()
         
-        
+        let fm = NSFileManager.defaultManager()
+        if let dataUrl = fm.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first?.URLByAppendingPathComponent("topfreeapps.json"),
+            data = NSData(contentsOfURL: dataUrl) {
+            
+            do {
+                let json = try JSON(data: data)
+                let apps = try json.array("feed","entry").map(App.init)
+                print(apps)
+                
+            } catch {
+                fatalError("Error parsing JSON")
+            }
+        }
         return true
     }
 

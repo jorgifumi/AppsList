@@ -17,8 +17,9 @@ public struct App {
 
 extension App: JSONDecodable {
     public init(json value: JSON) throws {
-        name = try value.string("im:name")
-        image = NSURL(string:  try value.string("image"))
-        summary = try value.string("summary")
+        name = try value.string("im:name","label")
+        let imagearray = try value.array("im:image")
+        image = NSURL(string:  try imagearray.last!.string("label"))
+        summary = try value.string("summary","label")
     }
 }
