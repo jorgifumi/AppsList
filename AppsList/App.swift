@@ -13,6 +13,7 @@ public struct App {
     public let name: String
     public let image: NSURL?
     public let summary: String
+    public let category: String
 }
 
 extension App: JSONDecodable {
@@ -21,5 +22,6 @@ extension App: JSONDecodable {
         let imagearray = try value.array("im:image")
         image = NSURL(string:  try imagearray.last!.string("label"))
         summary = try value.string("summary","label")
+        category = try value.string("category","attributes","label")
     }
 }

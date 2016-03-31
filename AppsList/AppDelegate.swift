@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 let json = try JSON(data: data)
                 let apps = try json.array("feed","entry").map(App.init)
-                print(apps)
+                print(apps.first)
                 
             } catch {
                 fatalError("Error parsing JSON")
