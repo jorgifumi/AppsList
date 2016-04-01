@@ -11,8 +11,9 @@ import Freddy
 
 public struct App {
     public let name: String
-    public let image: NSURL?
+    public let imageURL: NSURL?
     public let summary: String
+    public let publisher: String
     public let category: String
 }
 
@@ -20,8 +21,9 @@ extension App: JSONDecodable {
     public init(json value: JSON) throws {
         name = try value.string("im:name","label")
         let imagearray = try value.array("im:image")
-        image = NSURL(string:  try imagearray.last!.string("label"))
+        imageURL = NSURL(string:  try imagearray.last!.string("label"))
         summary = try value.string("summary","label")
+        publisher = try value.string("im:artist","label")
         category = try value.string("category","attributes","label")
     }
 }

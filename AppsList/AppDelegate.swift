@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Freddy
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,23 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        downloadJSON()
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let fm = NSFileManager.defaultManager()
-        if let dataUrl = fm.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first?.URLByAppendingPathComponent("topfreeapps.json"),
-            data = NSData(contentsOfURL: dataUrl) {
-            
-            do {
-                let json = try JSON(data: data)
-                let apps = try json.array("feed","entry").map(App.init)
-                print(apps.first)
-                
-            } catch {
-                fatalError("Error parsing JSON")
-            }
-        }
+        
+        installRootViewController()
+        
+        window?.makeKeyAndVisible()
+        
         return true
     }
+    
+    private func installRootViewController() {
+        let navigationController = UINavigationController()
+        let wireframe = AppsListWireframe(navigationController: navigationController)
+        let viewController: UIViewController
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            viewController = AppsGrillCollectionViewController(wireframe: wireframe)
+        } else {
+            viewController = AppsListTableViewController(wireframe: wireframe)
+        }
+        
+        navigationController.pushViewController(viewController, animated: true)
+        
+        window?.rootViewController = navigationController
+    }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -9,9 +9,34 @@
 import UIKit
 
 class AppsListTableViewController: UITableViewController {
+    
+    // MARK: - Properties
+    
+    private let viewModel: AppsListViewModelType
+    private let wireframe: AppsListWireframeType
+    
+    // MARK: - Initialization
+    
+    init(wireframe: AppsListWireframeType, viewModel: AppsListViewModelType = AppsListViewModel()) {
+        self.wireframe = wireframe
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: NSBundle(forClass: self.dynamicType))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: "AppsListCell", bundle: nil)
+        
+        self.tableView.registerNib(nib, forCellReuseIdentifier: kAppsListCellID)
+
+        self.title = "Top Apps List"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,18 +59,28 @@ class AppsListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 20
+        return viewModel.numberOfApps
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(kAppsListCellID, forIndexPath: indexPath) as? AppsListCell else {
+            fatalError()
+        }
+        
+        let model: AppsListItem = viewModel[indexPath.row]
 
         // Configure the cell...
-
+        cell.appName.text = model.name
+        cell.appPublisher.text = model.publisherName
+        cell.appCategory.text = model.category
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return kAppsListCellHeight
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

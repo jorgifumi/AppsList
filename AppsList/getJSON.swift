@@ -8,7 +8,7 @@
 
 import Foundation
 
-func downloadJSON(){
+func getJSON(){
     
     let firstRun = "Grability"
     
