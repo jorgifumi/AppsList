@@ -8,7 +8,7 @@
 
 import UIKit
 
-let kAppsListCellID = "NewsItemCell"
+let kAppsListCellID = "AppsListCell"
 let kAppsListCellHeight: CGFloat = 110.0
 
 class AppsListCell: UITableViewCell {
@@ -23,8 +23,15 @@ class AppsListCell: UITableViewCell {
             appName.text = item?.name
             
             if let imageURL = item?.imageURL {
-                //imageView.kf_setImageWithURL(imageURL)
+                
+                let asyncIcon = AGTAsyncImage(URL: imageURL, defaultImage: UIImage(named: "emptyApp.png"))
+                asyncIcon.delegate = self
+                icon.image = asyncIcon.image
+                
             }
+            
+            appPublisher.text = item?.publisherName
+            appCategory.text = item?.category
         }
     }
     
@@ -45,4 +52,11 @@ class AppsListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension AppsListCell: AGTAsyncImageDelegate {
+    
+    func asyncImageDidChange(aImage: AGTAsyncImage!) {
+        icon.image = aImage.image
+    }
 }

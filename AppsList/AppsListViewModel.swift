@@ -44,9 +44,6 @@ final class AppsListViewModel {
                 fatalError("Error parsing JSON")
             }
         }
-        
-        
-
     }
 }
 

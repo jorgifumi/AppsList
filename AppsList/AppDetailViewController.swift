@@ -10,6 +10,11 @@ import UIKit
 
 final class AppDetailViewController: UIViewController {
     
+    @IBOutlet weak var appIcon: UIImageView!
+    @IBOutlet weak var appName: UILabel!
+    @IBOutlet weak var appPublisher: UILabel!
+    @IBOutlet weak var appSummary: UILabel!
+    @IBOutlet weak var appCategory: UILabel!
     // MARK: - Properties
     
     let viewModel: AppDetailViewModelType
@@ -32,6 +37,11 @@ final class AppDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appName.text = viewModel.summary.name
+        appPublisher.text = viewModel.summary.publisherName
+        appSummary.text = viewModel.summary.summary
+        appCategory.text = viewModel.summary.category
 
         // Do any additional setup after loading the view.
     }

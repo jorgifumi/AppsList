@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        // Testing only
+        //AGTAsyncImage.flushLocalCache()
         
         installRootViewController()
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = kAppsGrillCellID
 
 class AppsGrillCollectionViewController: UICollectionViewController {
     
@@ -23,7 +23,14 @@ class AppsGrillCollectionViewController: UICollectionViewController {
         self.wireframe = wireframe
         self.viewModel = viewModel
         
-        super.init(nibName: nil, bundle: NSBundle(forClass: self.dynamicType))
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSizeMake(200, 200)
+        layout.scrollDirection = UICollectionViewScrollDirection.Vertical
+        layout.minimumLineSpacing = 30
+        layout.minimumInteritemSpacing = 30
+        layout.sectionInset = UIEdgeInsetsMake(30, 30, 30, 30)
+        
+        super.init(collectionViewLayout: layout)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,12 +39,22 @@ class AppsGrillCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: "AppsGrillCell", bundle: nil)
+        
+        self.collectionView!.registerNib(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        self.title = "Top Apps List"
+        
+        let categoryButton = UIBarButtonItem(barButtonSystemItem: .Organize, target: self, action: #selector(AppsListTableViewController.viewCategories))
+        
+        self.navigationItem.leftBarButtonItem = categoryButton
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.registerClass(AppsGrillCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -71,9 +88,15 @@ class AppsGrillCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? AppsGrillCell else {
+            fatalError()
+        }
+
     
-        // Configure the cell
+        let model: AppsListItem = viewModel[indexPath.row]
+        
+        // Configure the cell...
+        cell.item = model
     
         return cell
     }

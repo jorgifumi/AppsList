@@ -8,11 +8,45 @@
 
 import UIKit
 
+let kAppsGrillCellID = "AppsGrillCell"
+let kAppsGrillCellHeight: CGFloat = 110.0
+
 class AppsGrillCell: UICollectionViewCell {
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var appName: UILabel!
+    @IBOutlet weak var appCategory: UILabel!
+    @IBOutlet weak var appPublisher: UILabel!
+
+
+    var item: AppsListItem? {
+        didSet {
+            self.backgroundColor = UIColor.whiteColor()
+            appName.text = item?.name
+            
+            if let imageURL = item?.imageURL {
+                
+                let asyncIcon = AGTAsyncImage(URL: imageURL, defaultImage: UIImage(named: "emptyApp.png"))
+                asyncIcon.delegate = self
+                icon.image = asyncIcon.image
+                
+            }
+            
+            appPublisher.text = item?.publisherName
+            appCategory.text = item?.category
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+}
+
+
+extension AppsGrillCell: AGTAsyncImageDelegate {
+    
+    func asyncImageDidChange(aImage: AGTAsyncImage!) {
+        icon.image = aImage.image
+    }
 }
