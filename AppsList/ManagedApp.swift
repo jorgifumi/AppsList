@@ -8,14 +8,14 @@
 
 import Foundation
 import CoreData
-import Freddy
 
 final class ManagedApp: NSManagedObject {
     
+    @NSManaged var identifier: Int64
     @NSManaged var name: String
     @NSManaged var summary: String
     @NSManaged var publisher: String
-    @NSManaged var category: String
+    @NSManaged var category: ManagedCategory
 
     @NSManaged private(set) var insertionDate: NSDate
     

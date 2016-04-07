@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
     <entity name="App" representedClassName=".ManagedApp" syncable="YES">
-        <attribute name="category" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="imageURLString" attributeType="String" syncable="YES"/>
         <attribute name="insertionDate" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="publisher" attributeType="String" syncable="YES"/>
         <attribute name="summary" attributeType="String" syncable="YES"/>
+        <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="apps" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName="ManagedCategory" syncable="YES">
+        <attribute name="identifier" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="apps" toMany="YES" deletionRule="Cascade" destinationEntity="App" inverseName="category" inverseEntity="App" syncable="YES"/>
     </entity>
     <elements>
-        <element name="App" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="App" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Category" positionX="-63" positionY="27" width="128" height="90"/>
     </elements>
 </model>

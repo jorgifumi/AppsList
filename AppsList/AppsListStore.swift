@@ -43,7 +43,7 @@ class AppsListStore {
         
         app.name = summary.name
         app.summary = summary.summary
-        app.category = summary.category
+        app.category.name = summary.category
         app.imageURL = summary.imageURL
         
         try context.save()

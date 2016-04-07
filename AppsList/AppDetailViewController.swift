@@ -10,12 +10,12 @@ import UIKit
 
 final class AppDetailViewController: UIViewController {
     
+    // MARK: - Properties
     @IBOutlet weak var appIcon: UIImageView!
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appPublisher: UILabel!
     @IBOutlet weak var appSummary: UILabel!
     @IBOutlet weak var appCategory: UILabel!
-    // MARK: - Properties
     
     let viewModel: AppDetailViewModelType
     

@@ -9,7 +9,7 @@
 import Foundation
 import Freddy
 
-/// Represents a volume list view model
+/// Represents a apps list view model
 protocol AppsListViewModelType: class {
     
     
@@ -30,7 +30,7 @@ final class AppsListViewModel {
     var model = [App]()
     
     init() {
-        getJSON()
+        
         
         let fm = NSFileManager.defaultManager()
         if let dataUrl = fm.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first?.URLByAppendingPathComponent("topfreeapps.json"),

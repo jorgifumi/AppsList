@@ -12,6 +12,8 @@ import UIKit
 protocol AppsListWireframeType: class {
     
     func presentAppDetailWithSummary(summary: AppSummary, fromViewController viewController: UIViewController)
+    
+    func presentCategoriesList(list: [Category], fromViewController viewcontroller: UIViewController)
 }
 
 final class AppsListWireframe: NSObject {
@@ -31,5 +33,11 @@ extension AppsListWireframe: AppsListWireframeType {
         
         let detailViewController = AppDetailViewController(summary: summary)
         navigationController.pushViewController(detailViewController, animated: true)
+    }
+    
+    func presentCategoriesList(list: [Category], fromViewController viewcontroller: UIViewController) {
+        
+        let categoriesViewController = CategoriesListViewController(list: list)
+        navigationController.pushViewController(categoriesViewController, animated: true)
     }
 }

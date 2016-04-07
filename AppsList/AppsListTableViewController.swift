@@ -70,16 +70,7 @@ class AppsListTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.item = model
-//        cell.appName.text = model.name
-//        if let imageURL = model.imageURL {
-//            
-//            let asyncIcon = AGTAsyncImage(URL: imageURL, defaultImage: UIImage(named: "emptyApp.png"))
-//            asyncIcon.delegate = self
-//            cell.icon.image = asyncIcon.image
-//            
-//        }
-//        cell.appPublisher.text = model.publisherName
-//        cell.appCategory.text = model.category
+
         return cell
     }
     
@@ -98,7 +89,10 @@ class AppsListTableViewController: UITableViewController {
     }
     
     func viewCategories() {
-        //TODO
+        
+//        let list: [Category] = viewModel
+//        
+//        wireframe.presentCategoriesList(list, fromViewController: self)
     }
     
 }
