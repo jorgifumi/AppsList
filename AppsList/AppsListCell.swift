@@ -21,15 +21,12 @@ class AppsListCell: UITableViewCell {
     var item: AppsListItem? {
         didSet {
             appName.text = item?.name
-            
+
             if let imageURL = item?.imageURL {
-                
-                let asyncIcon = AGTAsyncImage(URL: imageURL, defaultImage: UIImage(named: "emptyApp.png"))
-                asyncIcon.delegate = self
-                icon.image = asyncIcon.image
-                
+                let asyncIcon = AsyncImage(withURL: imageURL, defaultImage: UIImage(named: "emptyApp.png")!, delegate: self)
+                self.icon.image = asyncIcon.image
             }
-            
+            icon.layer.cornerRadius = 20
             appPublisher.text = item?.publisherName
             appCategory.text = item?.category
         }
@@ -38,7 +35,7 @@ class AppsListCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        icon.image = nil
+        //icon.image = nil
     }
     
     override func awakeFromNib() {
@@ -54,9 +51,9 @@ class AppsListCell: UITableViewCell {
     
 }
 
-extension AppsListCell: AGTAsyncImageDelegate {
+extension AppsListCell: AsyncImageDelegate {
     
-    func asyncImageDidChange(aImage: AGTAsyncImage!) {
+    func asyncImageDidChange(aImage: AsyncImage) {
         icon.image = aImage.image
     }
 }

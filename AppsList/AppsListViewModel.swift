@@ -13,8 +13,6 @@ protocol AppsListViewControllerDelegate {
     func didChangeCategory(newCategory: Category?)
     
     var viewModel : AppsListViewModelType { get }
-    
-    
 }
 
 extension AppsListViewControllerDelegate {

@@ -25,12 +25,11 @@ class AppsGrillCell: UICollectionViewCell {
             
             if let imageURL = item?.imageURL {
                 
-                let asyncIcon = AGTAsyncImage(URL: imageURL, defaultImage: UIImage(named: "emptyApp.png"))
-                asyncIcon.delegate = self
+                let asyncIcon = AsyncImage(withURL: imageURL, defaultImage: UIImage(named: "emptyApp.png")!, delegate: self)
                 icon.image = asyncIcon.image
                 
             }
-            
+            icon.layer.cornerRadius = 20
             appPublisher.text = item?.publisherName
             appCategory.text = item?.category
         }
@@ -44,9 +43,9 @@ class AppsGrillCell: UICollectionViewCell {
 }
 
 
-extension AppsGrillCell: AGTAsyncImageDelegate {
+extension AppsGrillCell: AsyncImageDelegate {
     
-    func asyncImageDidChange(aImage: AGTAsyncImage!) {
+    func asyncImageDidChange(aImage: AsyncImage) {
         icon.image = aImage.image
     }
 }

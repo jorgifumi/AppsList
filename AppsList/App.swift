@@ -22,13 +22,15 @@ extension App: JSONDecodable {
         name = imName["label"] as? String,
         summary = (dictionary as NSDictionary).valueForKeyPath("summary.label") as? String,
         publisher = (dictionary as NSDictionary).valueForKeyPath("im:artist.label") as? String,
-        category = (dictionary as NSDictionary).valueForKeyPath("category.attributes.label") as? String else {
+        category = (dictionary as NSDictionary).valueForKeyPath("category.attributes.label") as? String,
+        imageArray = dictionary["im:image"]?.lastObject as? JSONDictionary,
+        imageURL = imageArray["label"] as? String else {
                 fatalError("Error parsing App")
         }
         self.name = name
         self.summary = summary
         self.publisher = publisher
         self.category = Category(name: category)
-        self.imageURL = (dictionary as NSDictionary).valueForKeyPath("im:image.label") as? NSURL
+        self.imageURL = NSURL(string: imageURL)
     }
 }

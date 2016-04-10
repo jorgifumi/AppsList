@@ -38,6 +38,12 @@ final class AppDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let imageURL = viewModel.summary.imageURL {
+                let asyncIcon = AsyncImage(withURL: imageURL, defaultImage: UIImage(named: "emptyApp.png")!, delegate: self)
+                appIcon.image = asyncIcon.image
+
+        }
+
         appName.text = viewModel.summary.name
         appPublisher.text = viewModel.summary.publisherName
         appSummary.text = viewModel.summary.summary
@@ -50,16 +56,11 @@ final class AppDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+extension AppDetailViewController: AsyncImageDelegate {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func asyncImageDidChange(aImage: AsyncImage) {
+        appIcon.image = aImage.image
     }
-    */
-
 }
