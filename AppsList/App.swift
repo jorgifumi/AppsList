@@ -13,7 +13,7 @@ public struct App {
     public let imageURL: NSURL?
     public let summary: String
     public let publisher: String
-    public let category: String
+    public let category: Category
 }
 
 extension App: JSONDecodable {
@@ -28,7 +28,7 @@ extension App: JSONDecodable {
         self.name = name
         self.summary = summary
         self.publisher = publisher
-        self.category = category
+        self.category = Category(name: category)
         self.imageURL = (dictionary as NSDictionary).valueForKeyPath("im:image.label") as? NSURL
     }
 }

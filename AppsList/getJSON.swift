@@ -31,6 +31,7 @@ func getJSON() -> [JSONDictionary] {
         
     }else{
         // Can't get data from network
+        print("Download failed!")
         let previousData = (ud.objectForKey(storedJSON) as? Bool == true)
         
         if !previousData {

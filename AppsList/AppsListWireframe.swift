@@ -13,7 +13,7 @@ protocol AppsListWireframeType: class {
     
     func presentAppDetailWithSummary(summary: AppSummary, fromViewController viewController: UIViewController)
     
-    func presentCategoriesList(list: [Category], fromViewController viewcontroller: UIViewController)
+    func presentCategoriesList(list: [Category], fromViewController viewcontroller: AppsListViewControllerDelegate)
 }
 
 final class AppsListWireframe: NSObject {
@@ -35,9 +35,11 @@ extension AppsListWireframe: AppsListWireframeType {
         navigationController.pushViewController(detailViewController, animated: true)
     }
     
-    func presentCategoriesList(list: [Category], fromViewController viewcontroller: UIViewController) {
+    func presentCategoriesList(list: [Category], fromViewController viewcontroller: AppsListViewControllerDelegate) {
         
         let categoriesViewController = CategoriesListViewController(list: list)
-        navigationController.pushViewController(categoriesViewController, animated: true)
+        categoriesViewController.delegate = viewcontroller
+        
+        navigationController.presentViewController(categoriesViewController, animated: true, completion: nil)
     }
 }

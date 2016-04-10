@@ -42,7 +42,7 @@ class AppsListTableViewController: UITableViewController {
         
         self.navigationItem.leftBarButtonItem = categoryButton
         
-        viewModel.didUpdateList = self.tableView.reloadData
+        viewModel.didUpdateList = tableView.reloadData
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,16 +93,20 @@ class AppsListTableViewController: UITableViewController {
     
     func viewCategories() {
         
-//        let list: [Category] = viewModel
-//        
-//        wireframe.presentCategoriesList(list, fromViewController: self)
+        wireframe.presentCategoriesList(viewModel.categories, fromViewController: self)
     }
     
 }
 
-//extension AppsListTableViewController: AGTAsyncImageDelegate {
-//    
-//    func asyncImageDidChange(aImage: AGTAsyncImage!) {
-//        self.tableView.reloadData()
-//    }
-//}
+protocol AppsListViewControllerDelegate {
+    func didChangeCategory(newCategory: Category)
+    
+}
+
+extension AppsListTableViewController: AppsListViewControllerDelegate {
+    
+    func didChangeCategory(category: Category)  {
+        viewModel.category = category
+    }
+    
+}
