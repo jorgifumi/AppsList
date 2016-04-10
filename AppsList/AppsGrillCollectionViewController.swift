@@ -14,7 +14,7 @@ class AppsGrillCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     
-    private let viewModel: AppsListViewModelType
+    internal let viewModel: AppsListViewModelType
     private let wireframe: AppsListWireframeType
     
     // MARK: - Initialization
@@ -46,7 +46,7 @@ class AppsGrillCollectionViewController: UICollectionViewController {
         
         self.title = "Top Apps List"
         
-        let categoryButton = UIBarButtonItem(barButtonSystemItem: .Organize, target: self, action: #selector(AppsListTableViewController.viewCategories))
+        let categoryButton = UIBarButtonItem(barButtonSystemItem: .Bookmarks , target: self, action: #selector(AppsGrillCollectionViewController.viewCategories))
         
         self.navigationItem.leftBarButtonItem = categoryButton
 
@@ -58,16 +58,22 @@ class AppsGrillCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let summary: AppSummary = viewModel[indexPath.row]
+        
+        wireframe.presentAppDetailWithSummary(summary, fromViewController: self)
     }
-    */
+    
+    func viewCategories() {
+        
+        wireframe.presentCategoriesList(viewModel.categories, fromViewController: self)
+    }
 
+    
+ 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -96,3 +102,5 @@ class AppsGrillCollectionViewController: UICollectionViewController {
     }
 
 }
+
+extension AppsGrillCollectionViewController: AppsListViewControllerDelegate {}

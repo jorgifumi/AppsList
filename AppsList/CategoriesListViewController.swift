@@ -55,7 +55,7 @@ class CategoriesListViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
-        return list.count
+        return list.count + 1
     }
 
     
@@ -63,7 +63,12 @@ class CategoriesListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = list[indexPath.row].name
+        if indexPath.row < list.count {
+            cell.textLabel?.text = list[indexPath.row].name
+        } else {
+            cell.textLabel?.text = "All"
+        }
+        
 
         return cell
     }
@@ -72,8 +77,11 @@ class CategoriesListViewController: UITableViewController {
     // MARK: - Navigation
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        delegate?.didChangeCategory(list[indexPath.row])
+        if indexPath.row < list.count {
+            delegate?.didChangeCategory(list[indexPath.row])
+        } else {
+            delegate?.didChangeCategory(nil)
+        }
         dismissViewControllerAnimated(true, completion: nil)
         
     }

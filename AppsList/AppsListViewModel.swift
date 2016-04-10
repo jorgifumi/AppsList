@@ -9,6 +9,22 @@
 import Foundation
 import CoreData
 
+protocol AppsListViewControllerDelegate {
+    func didChangeCategory(newCategory: Category?)
+    
+    var viewModel : AppsListViewModelType { get }
+    
+    
+}
+
+extension AppsListViewControllerDelegate {
+    
+    func didChangeCategory(category: Category?)  {
+        viewModel.category = category
+        viewModel.didUpdateList()
+    }
+}
+
 /// Represents a apps list view model
 protocol AppsListViewModelType: class {
     
@@ -34,30 +50,31 @@ protocol AppsListViewModelType: class {
 final class AppsListViewModel {
 
     // MARK: - Properties
-
-    private var model: [App] = decode(getJSON())
     
-    var categories: [Category] {
-        get {
-            var set = Set<Category>()
-            _ = model.map { app in
-                set.insert(app.category)
-            }
+    private let list: [App] = decode(getJSON())
 
-            return set.sort { $0.name < $1.name }
+    private var model: [App] {
+        get{
+            if let category = category {
+                return list.filter { $0.category == category }
+            } else {
+                return list
+            }
+        }
+        set {
+            didUpdateList()
         }
     }
     
-    var category: Category? {
-        get {
-            return self.category
-        }
-        set {
-            if let newValue = newValue {
-                model = model.filter { $0.category.name == newValue.name }
-                didUpdateList()
-            }
-        }
+    let categories: [Category]
+    
+    var category: Category?
+    
+    
+    init() {
+        var temp = Set<Category>()
+        var _ = list.map( { temp.insert($0.category) })
+        self.categories = temp.sort { $0.name < $1.name }
     }
     
     convenience init(withCategory category: Category?) {

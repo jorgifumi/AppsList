@@ -12,7 +12,7 @@ class AppsListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    private let viewModel: AppsListViewModelType
+    internal let viewModel: AppsListViewModelType
     private let wireframe: AppsListWireframeType
     
     // MARK: - Initialization
@@ -38,7 +38,7 @@ class AppsListTableViewController: UITableViewController {
 
         self.title = "Top Apps List"
 
-        let categoryButton = UIBarButtonItem(barButtonSystemItem: .Organize, target: self, action: #selector(AppsListTableViewController.viewCategories))
+        let categoryButton = UIBarButtonItem(barButtonSystemItem: .Bookmarks, target: self, action: #selector(AppsListTableViewController.viewCategories))
         
         self.navigationItem.leftBarButtonItem = categoryButton
         
@@ -59,7 +59,6 @@ class AppsListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(viewModel.numberOfApps)
         return viewModel.numberOfApps
     }
 
@@ -98,15 +97,6 @@ class AppsListTableViewController: UITableViewController {
     
 }
 
-protocol AppsListViewControllerDelegate {
-    func didChangeCategory(newCategory: Category)
-    
-}
+extension AppsListTableViewController: AppsListViewControllerDelegate {}
 
-extension AppsListTableViewController: AppsListViewControllerDelegate {
-    
-    func didChangeCategory(category: Category)  {
-        viewModel.category = category
-    }
-    
-}
+
