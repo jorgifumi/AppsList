@@ -25,12 +25,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    private func installRootViewController() {
-        
-        
-        
-        
-    }
-
 }
 

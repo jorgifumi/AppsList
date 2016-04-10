@@ -41,6 +41,8 @@ class AppsListTableViewController: UITableViewController {
         let categoryButton = UIBarButtonItem(barButtonSystemItem: .Organize, target: self, action: #selector(AppsListTableViewController.viewCategories))
         
         self.navigationItem.leftBarButtonItem = categoryButton
+        
+        viewModel.didUpdateList = self.tableView.reloadData
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +59,7 @@ class AppsListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        print(viewModel.numberOfApps)
         return viewModel.numberOfApps
     }
 

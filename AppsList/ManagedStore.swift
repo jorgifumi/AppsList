@@ -48,10 +48,6 @@ final class ManagedStore {
         try self.init(URL: documentURL, model: model)
     }
     
-    static func temporaryStore() throws -> ManagedStore {
-        
-        return try ManagedStore(URL: NSURL.temporaryFileURL())
-    }
     
     // MARK: - Context creation
     

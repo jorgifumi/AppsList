@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Freddy
 
 public struct App {
     public let name: String
@@ -18,12 +17,18 @@ public struct App {
 }
 
 extension App: JSONDecodable {
-    public init(json value: JSON) throws {
-        name = try value.string("im:name","label")
-        let imagearray = try value.array("im:image")
-        imageURL = NSURL(string:  try imagearray.last!.string("label"))
-        summary = try value.string("summary","label")
-        publisher = try value.string("im:artist","label")
-        category = try value.string("category","attributes","label")
+    init?(dictionary: JSONDictionary) {
+        guard let imName = dictionary["im:name"] as? JSONDictionary,
+        name = imName["label"] as? String,
+        summary = (dictionary as NSDictionary).valueForKeyPath("summary.label") as? String,
+        publisher = (dictionary as NSDictionary).valueForKeyPath("im:artist.label") as? String,
+        category = (dictionary as NSDictionary).valueForKeyPath("category.attributes.label") as? String else {
+                fatalError("Error parsing App")
+        }
+        self.name = name
+        self.summary = summary
+        self.publisher = publisher
+        self.category = category
+        self.imageURL = (dictionary as NSDictionary).valueForKeyPath("im:image.label") as? NSURL
     }
 }

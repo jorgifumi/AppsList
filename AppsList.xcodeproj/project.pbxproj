@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6823CA811CAD587E00DAE237 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6823CA741CAD583300DAE237 /* Freddy.framework */; };
 		6823CA851CAD603500DAE237 /* getJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823CA841CAD603500DAE237 /* getJSON.swift */; };
 		6823CA871CAD790B00DAE237 /* AppsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823CA861CAD790B00DAE237 /* AppsListViewModel.swift */; };
 		6823CA891CAD7B7700DAE237 /* AppsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823CA881CAD7B7700DAE237 /* AppsListItem.swift */; };
@@ -45,62 +44,10 @@
 		689675321CAEEEAC00CB89BD /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689675301CAEEEAC00CB89BD /* AppDetailViewController.swift */; };
 		689675331CAEEEAC00CB89BD /* AppDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689675311CAEEEAC00CB89BD /* AppDetailViewController.xib */; };
 		689675351CAEF01300CB89BD /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689675341CAEF01300CB89BD /* AppDetailViewModel.swift */; };
+		68D38EA61CB93D09006F36E7 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D38EA51CB93D09006F36E7 /* JSONDecodable.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6823CA731CAD583300DAE237 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB6ADF3E1C23612000D77BF1;
-			remoteInfo = Freddy;
-		};
-		6823CA751CAD583300DAE237 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB6ADF471C23612000D77BF1;
-			remoteInfo = FreddyTests;
-		};
-		6823CA771CAD583300DAE237 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB6ADF1F1C23610B00D77BF1;
-			remoteInfo = MobileFreddy;
-		};
-		6823CA791CAD583300DAE237 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB6ADF291C23610B00D77BF1;
-			remoteInfo = MobileFreddyTests;
-		};
-		6823CA7B1CAD583300DAE237 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB6ADF5A1C23612900D77BF1;
-			remoteInfo = TVFreddy;
-		};
-		6823CA7D1CAD583300DAE237 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB6ADF631C23612A00D77BF1;
-			remoteInfo = TVFreddyTests;
-		};
-		6823CA7F1CAD583300DAE237 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB6ADF761C23613200D77BF1;
-			remoteInfo = NanoFreddy;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		6823CA691CAD583300DAE237 /* Freddy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Freddy.xcodeproj; path = Vendor/Freddy/Freddy.xcodeproj; sourceTree = "<group>"; };
 		6823CA841CAD603500DAE237 /* getJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getJSON.swift; sourceTree = "<group>"; };
 		6823CA861CAD790B00DAE237 /* AppsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsListViewModel.swift; sourceTree = "<group>"; };
 		6823CA881CAD7B7700DAE237 /* AppsListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsListItem.swift; sourceTree = "<group>"; };
@@ -142,6 +89,7 @@
 		689675301CAEEEAC00CB89BD /* AppDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		689675311CAEEEAC00CB89BD /* AppDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppDetailViewController.xib; sourceTree = "<group>"; };
 		689675341CAEF01300CB89BD /* AppDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
+		68D38EA51CB93D09006F36E7 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,27 +97,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6823CA811CAD587E00DAE237 /* Freddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6823CA6A1CAD583300DAE237 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6823CA741CAD583300DAE237 /* Freddy.framework */,
-				6823CA761CAD583300DAE237 /* FreddyTests.xctest */,
-				6823CA781CAD583300DAE237 /* Freddy.framework */,
-				6823CA7A1CAD583300DAE237 /* MobileFreddyTests.xctest */,
-				6823CA7C1CAD583300DAE237 /* Freddy.framework */,
-				6823CA7E1CAD583300DAE237 /* TVFreddyTests.xctest */,
-				6823CA801CAD583300DAE237 /* Freddy.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6823CA821CAD5C9000DAE237 /* TopFreeApps */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +166,7 @@
 			children = (
 				6823CA841CAD603500DAE237 /* getJSON.swift */,
 				6823CA961CAD86A700DAE237 /* ManagedObjectType.swift */,
+				68D38EA51CB93D09006F36E7 /* JSONDecodable.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -305,7 +239,6 @@
 		6885AF451CAAE52300AE3392 = {
 			isa = PBXGroup;
 			children = (
-				6823CA691CAD583300DAE237 /* Freddy.xcodeproj */,
 				6885AF501CAAE52300AE3392 /* AppsList */,
 				6885AF4F1CAAE52300AE3392 /* Products */,
 			);
@@ -449,70 +382,12 @@
 			mainGroup = 6885AF451CAAE52300AE3392;
 			productRefGroup = 6885AF4F1CAAE52300AE3392 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6823CA6A1CAD583300DAE237 /* Products */;
-					ProjectRef = 6823CA691CAD583300DAE237 /* Freddy.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6885AF4D1CAAE52300AE3392 /* AppsList */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6823CA741CAD583300DAE237 /* Freddy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Freddy.framework;
-			remoteRef = 6823CA731CAD583300DAE237 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6823CA761CAD583300DAE237 /* FreddyTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FreddyTests.xctest;
-			remoteRef = 6823CA751CAD583300DAE237 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6823CA781CAD583300DAE237 /* Freddy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Freddy.framework;
-			remoteRef = 6823CA771CAD583300DAE237 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6823CA7A1CAD583300DAE237 /* MobileFreddyTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MobileFreddyTests.xctest;
-			remoteRef = 6823CA791CAD583300DAE237 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6823CA7C1CAD583300DAE237 /* Freddy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Freddy.framework;
-			remoteRef = 6823CA7B1CAD583300DAE237 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6823CA7E1CAD583300DAE237 /* TVFreddyTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TVFreddyTests.xctest;
-			remoteRef = 6823CA7D1CAD583300DAE237 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6823CA801CAD583300DAE237 /* Freddy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Freddy.framework;
-			remoteRef = 6823CA7F1CAD583300DAE237 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6885AF4C1CAAE52300AE3392 /* Resources */ = {
@@ -562,6 +437,7 @@
 				6852D8DA1CB6BB3200A9ED30 /* SplashViewController.swift in Sources */,
 				689558591CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.swift in Sources */,
 				6823CA9B1CAD8FEF00DAE237 /* ManagedStore.swift in Sources */,
+				68D38EA61CB93D09006F36E7 /* JSONDecodable.swift in Sources */,
 				689558661CAC3E1F00CF3C92 /* App.swift in Sources */,
 				689558611CAC344300CF3C92 /* AppsListCell.swift in Sources */,
 				687153EC1CB5674600763C3C /* CategoriesListViewController.swift in Sources */,

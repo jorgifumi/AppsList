@@ -7,11 +7,13 @@
 //
 
 import Foundation
-import Freddy
+import CoreData
 
 /// Represents a apps list view model
 protocol AppsListViewModelType: class {
     
+    /// Called when apps are inserted or removed
+    var didUpdateList: () -> () { get set }
     
     /// The number of volumes in the list
     var numberOfApps: Int { get }
@@ -23,57 +25,6 @@ protocol AppsListViewModelType: class {
     subscript(position: Int) -> AppSummary { get }
 }
 
-final class AppsListViewModel {
-    
-    // MARK: - Properties
-    
-    var model = [App]()
-    
-    init() {
-        
-        
-        let fm = NSFileManager.defaultManager()
-        if let dataUrl = fm.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first?.URLByAppendingPathComponent("topfreeapps.json"),
-            data = NSData(contentsOfURL: dataUrl) {
-            
-            do {
-                let json = try JSON(data: data)
-                self.model = try json.array("feed","entry").map(App.init)
-                //print(apps.first)
-            } catch {
-                fatalError("Error parsing JSON")
-            }
-        }
-    }
-}
-
-extension AppsListViewModel: AppsListViewModelType {
-    var numberOfApps: Int {
-        return model.count
-    }
-
-    subscript(position: Int) -> AppsListItem {
-        assert(position < numberOfApps, "Position out of range")
-
-        let app: App = self.model[position]
-
-        return AppsListItem(name: app.name, imageURL: app.imageURL, publisherName: app.publisher, category: app.category)
-    }
-
-    subscript(position: Int) -> AppSummary {
-        assert(position < numberOfApps, "Position out of range")
-
-        let app: App = self.model[position]
-
-        return AppSummary(
-            name:  app.name,
-            imageURL:  app.imageURL,
-            publisherName: app.publisher,
-            summary: app.summary,
-            category: app.category
-        )
-    }
-}
 
 //final class AppsListViewModel: NSObject {
 //    
@@ -125,7 +76,7 @@ extension AppsListViewModel: AppsListViewModelType {
 //        
 //        let app: ManagedApp = self[position]
 //        
-//        return AppsListItem(name: app.name, image: app.imageURL, summary: app.summary, category: app.category)
+//        return AppsListItem(name: app.name, imageURL: app.imageURL, publisherName: app.summary, category: app.category.name)
 //    }
 //    
 //    subscript(position: Int) -> AppSummary {
@@ -138,7 +89,58 @@ extension AppsListViewModel: AppsListViewModelType {
 //            imageURL:  app.imageURL,
 //            publisherName: app.publisher,
 //            summary: app.summary,
-//            category: app.category
+//            category: app.category.name
 //        )
 //    }
 //}
+
+final class AppsListViewModel {
+
+    // MARK: - Properties
+
+    var model: [App] = decode(getJSON())
+    
+    var didUpdateList: () -> () = {}
+
+    init() {
+
+//        if let data = NSData(contentsOfURL: NSURL.documentsDirectoryURL.URLByAppendingPathComponent("topfreeapps.json")) {
+//
+//            do {
+//                let json = try JSON(data: data)
+//                self.model = try json.array("feed","entry").map(App.init)
+//                //print(apps.first)
+//            } catch {
+//                fatalError("Error parsing JSON")
+//            }
+//        }
+    }
+}
+
+extension AppsListViewModel: AppsListViewModelType {
+    var numberOfApps: Int {
+        return model.count
+    }
+
+    subscript(position: Int) -> AppsListItem {
+        assert(position < numberOfApps, "Position out of range")
+
+        let app: App = self.model[position]
+
+        return AppsListItem(name: app.name, imageURL: app.imageURL, publisherName: app.publisher, category: app.category)
+    }
+
+    subscript(position: Int) -> AppSummary {
+        assert(position < numberOfApps, "Position out of range")
+
+        let app: App = self.model[position]
+
+        return AppSummary(
+            name:  app.name,
+            imageURL:  app.imageURL,
+            publisherName: app.publisher,
+            summary: app.summary,
+            category: app.category
+        )
+    }
+}

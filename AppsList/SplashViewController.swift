@@ -13,7 +13,8 @@ final class SplashViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        getJSON()
+     
+       
         installRootViewController()
 
     }

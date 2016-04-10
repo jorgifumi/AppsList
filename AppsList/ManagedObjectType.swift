@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import Freddy
 
 protocol ManagedObjectType {
     static var entityName: String { get }
@@ -26,10 +25,10 @@ extension ManagedObjectType {
 }
 
 protocol ManagedJSONDecodable {
-    func updateWithJSONDictionary(dictionary: JSON)
+    func updateWithJSONDictionary(dictionary: JSONDictionary)
 }
 
-func decode<T: NSManagedObject where T: ManagedObjectType, T: ManagedJSONDecodable>(dictionaries: [JSON], insertingIntoContext context: NSManagedObjectContext) -> [T] {
+func decode<T: NSManagedObject where T: ManagedObjectType, T: ManagedJSONDecodable>(dictionaries: [JSONDictionary], insertingIntoContext context: NSManagedObjectContext) -> [T] {
     
     var objects: [T] = []
     

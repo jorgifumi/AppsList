@@ -11,7 +11,7 @@ import CoreData
 
 final class ManagedApp: NSManagedObject {
     
-    @NSManaged var identifier: Int64
+    @NSManaged var identifier: Int
     @NSManaged var name: String
     @NSManaged var summary: String
     @NSManaged var publisher: String
@@ -57,17 +57,17 @@ extension ManagedApp: ManagedObjectType {
     }
 }
 
-//extension ManagedApp: ManagedJSONDecodable {
-//    func updateWithJSONDictionary(dictionary: JSON) {
-//        guard let identifier = dictionary["id"] as? Int,
-//            title = dictionary["name"] as? String else {
-//                // TODO: throw
-//                return
-//        }
-//        
-//        self.identifier = identifier
-//        self.title = title
-//        self.publisher = (dictionary as NSDictionary).valueForKeyPath("publisher.name") as? String
-//        self.imageURLString = (dictionary as NSDictionary).valueForKeyPath("image.small_url") as? String
-//    }
-//}
+extension ManagedApp: ManagedJSONDecodable {
+    func updateWithJSONDictionary(dictionary: JSONDictionary) {
+        guard let identifier = dictionary["id"] as? Int,
+            name = dictionary["name"] as? String else {
+                // TODO: throw
+                return
+        }
+        
+        self.identifier = identifier
+        self.name = name
+        self.publisher = ((dictionary as NSDictionary).valueForKeyPath("publisher.name") as? String)!
+        self.imageURLString = (dictionary as NSDictionary).valueForKeyPath("image.small_url") as? String
+    }
+}

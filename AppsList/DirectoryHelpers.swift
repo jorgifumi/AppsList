@@ -9,9 +9,8 @@
 import Foundation
 
 extension NSURL {
-    static func temporaryFileURL() -> NSURL {
-        let fileURL = NSURL(fileURLWithPath: NSTemporaryDirectory())
-        return fileURL.URLByAppendingPathComponent(NSUUID().UUIDString)
+    static func bundledJSONURL() -> NSURL {
+        return NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("topfreeapps",ofType:"json")!)
     }
     
     static var documentsDirectoryURL: NSURL {

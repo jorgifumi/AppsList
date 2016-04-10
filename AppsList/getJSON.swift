@@ -8,35 +8,53 @@
 
 import Foundation
 
-func getJSON(){
-    
-    let firstRun = "Grability"
-    
-    // Check previous data
+private let feedURL = NSURL(string: "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json")
+private let storedJSON = "previousData"
+
+func getJSON() -> [JSONDictionary] {
     
     let ud = NSUserDefaults.standardUserDefaults()
-    let isFirstRun = ud.objectForKey(firstRun)
+    let dataUrl = NSURL.documentsDirectoryURL.URLByAppendingPathComponent("topfreeapps.json")
     
-    if isFirstRun == nil {
-        // Primera vez que se arranca
-        let url = NSURL(string: "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json")
-        let fm = NSFileManager.defaultManager()
+    // Download the newest JSON
+    print("Downloading...")
+    if let data = NSData(contentsOfURL: feedURL!) {
         
-        // Download JSON
-        if let data = NSData(contentsOfURL: url!) {
-            // Save in Documents
-            if let dataUrl = fm.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first?.URLByAppendingPathComponent("topfreeapps.json") {
-                data.writeToURL(dataUrl, atomically: true)
-                print("Downloading...")
-                // Marcamos que ya se ha iniciado alguna vez
-                ud.setBool(true, forKey: firstRun)
-            }
-        }else{
-            // No network and no previous data
-            
-        }
+        
+        // Save in Documents
+        print("Saving data into disk...")
+        data.writeToURL(dataUrl, atomically: true)
+        
+        
+        // Marcamos que ya se ha iniciado alguna vez
+        ud.setBool(true, forKey: storedJSON)
+        
     }else{
-        // Ya existen datos
-        print("Loading data from disk...")
+        // Can't get data from network
+        let previousData = (ud.objectForKey(storedJSON) as? Bool == true)
+        
+        if !previousData {
+            // Load bundled JSON
+            if let bundledData = NSData(contentsOfURL: NSURL.bundledJSONURL()) {
+                bundledData.writeToURL(dataUrl, atomically: true)
+                print("Loading data from bundle...")
+            } else {
+                // No network, no stored, no bundled Data... ¿WTF?
+                fatalError("Impossible to get JSON!")
+            }
+        }
     }
+    
+    // Load stored JSON
+    print("Loading data from disk...")
+    guard let data = NSData(contentsOfURL: dataUrl),
+        jsonData = try? NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSONDictionary,
+        feed = jsonData!["feed"] as? JSONDictionary,
+        entry = feed["entry"] as? [JSONDictionary] else {
+            
+            fatalError("Error processing JSON")
+            
+    }
+    return entry
+
 }

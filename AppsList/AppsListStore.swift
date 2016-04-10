@@ -21,14 +21,14 @@ class AppsListStore {
         self.context = managedStore.contextWithConcurrecyType(.MainQueueConcurrencyType)
     }
     
-//    func containsVolume(identifier: Int) -> Bool {
-//        let fetchRequest = ManagedApp.fetchRequestForVolume(identifier)
-//        let count = context.countForFetchRequest(fetchRequest, error: nil)
-//        
-//        return (count != NSNotFound) && (count > 0)
-//    }
+    func containsApp(identifier: Int) -> Bool {
+        let fetchRequest = ManagedApp.fetchRequestForApp(identifier)
+        let count = context.countForFetchRequest(fetchRequest, error: nil)
+        
+        return (count != NSNotFound) && (count > 0)
+    }
     
-    func removeVolume(identifier: Int) throws {
+    func removeApp(identifier: Int) throws {
         let fetchRequest = ManagedApp.fetchRequestForApp(identifier)
         let apps = try context.executeFetchRequest(fetchRequest) as! [ManagedApp]
         
@@ -38,7 +38,7 @@ class AppsListStore {
         }
     }
     
-    func addVolume(summary: AppSummary) throws {
+    func addApp(summary: AppSummary) throws {
         let app = NSEntityDescription.insertNewObjectForEntityForName(ManagedApp.entityName, inManagedObjectContext: context) as! ManagedApp
         
         app.name = summary.name
