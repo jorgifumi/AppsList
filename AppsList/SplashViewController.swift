@@ -10,13 +10,29 @@ import UIKit
 
 final class SplashViewController: UIViewController {
     
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(named: .Background)
+    }
     
     override func viewDidAppear(animated: Bool) {
         
+        customizeAppearance()
         installRootViewController()
 
     }
     
+    private func customizeAppearance() {
+        let navigationBarAppearance = UINavigationBar.appearance()
+        let barTintColor = UIColor(named: .Bar)
+        
+        navigationBarAppearance.barStyle = .Black // This will make the status bar white by default
+        navigationBarAppearance.barTintColor = barTintColor
+        navigationBarAppearance.tintColor = UIColor.whiteColor()
+        navigationBarAppearance.titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.whiteColor()
+        ]
+    }
+
     private func installRootViewController() {
         let navigationController = UINavigationController()
         let wireframe = AppsListWireframe(navigationController: navigationController)

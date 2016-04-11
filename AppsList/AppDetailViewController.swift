@@ -14,7 +14,7 @@ final class AppDetailViewController: UIViewController {
     @IBOutlet weak var appIcon: UIImageView!
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appPublisher: UILabel!
-    @IBOutlet weak var appSummary: UILabel!
+    @IBOutlet weak var appSummary: UITextView!
     @IBOutlet weak var appCategory: UILabel!
     
     let viewModel: AppDetailViewModelType
@@ -38,9 +38,11 @@ final class AppDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if let imageURL = viewModel.summary.imageURL {
                 let asyncIcon = AsyncImage(withURL: imageURL, defaultImage: UIImage(named: "emptyApp.png")!, delegate: self)
                 appIcon.image = asyncIcon.image
+                appIcon.layer.cornerRadius = 20
 
         }
 

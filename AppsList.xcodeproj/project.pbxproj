@@ -46,6 +46,7 @@
 		689675321CAEEEAC00CB89BD /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689675301CAEEEAC00CB89BD /* AppDetailViewController.swift */; };
 		689675331CAEEEAC00CB89BD /* AppDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689675311CAEEEAC00CB89BD /* AppDetailViewController.xib */; };
 		689675351CAEF01300CB89BD /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689675341CAEF01300CB89BD /* AppDetailViewModel.swift */; };
+		68A43C641CBBF000006C72CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A43C631CBBF000006C72CA /* Colors.swift */; };
 		68D38EA61CB93D09006F36E7 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D38EA51CB93D09006F36E7 /* JSONDecodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		689675301CAEEEAC00CB89BD /* AppDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		689675311CAEEEAC00CB89BD /* AppDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppDetailViewController.xib; sourceTree = "<group>"; };
 		689675341CAEF01300CB89BD /* AppDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
+		68A43C631CBBF000006C72CA /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		68D38EA51CB93D09006F36E7 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +119,6 @@
 		6823CA8A1CAD7D3700DAE237 /* AppDetail */ = {
 			isa = PBXGroup;
 			children = (
-				687153E01CB5551F00763C3C /* Views */,
 				6896752B1CAEEE5100CB89BD /* View Controllers */,
 				6823CA8B1CAD7D4E00DAE237 /* View Models */,
 			);
@@ -181,15 +182,9 @@
 				6823CA9A1CAD8FEF00DAE237 /* ManagedStore.swift */,
 				6823CA9C1CAD934A00DAE237 /* DirectoryHelpers.swift */,
 				6881CB701CBAB62A00AA02EE /* AsyncImage.swift */,
+				68A43C631CBBF000006C72CA /* Colors.swift */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		687153E01CB5551F00763C3C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		687153E81CB5654200763C3C /* CategoriesList */ = {
@@ -438,6 +433,7 @@
 				6823CA9D1CAD934A00DAE237 /* DirectoryHelpers.swift in Sources */,
 				6823CA871CAD790B00DAE237 /* AppsListViewModel.swift in Sources */,
 				6852D8DA1CB6BB3200A9ED30 /* SplashViewController.swift in Sources */,
+				68A43C641CBBF000006C72CA /* Colors.swift in Sources */,
 				689558591CAC2FDE00CF3C92 /* AppsGrillCollectionViewController.swift in Sources */,
 				6823CA9B1CAD8FEF00DAE237 /* ManagedStore.swift in Sources */,
 				68D38EA61CB93D09006F36E7 /* JSONDecodable.swift in Sources */,

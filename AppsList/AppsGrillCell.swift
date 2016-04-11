@@ -9,7 +9,6 @@
 import UIKit
 
 let kAppsGrillCellID = "AppsGrillCell"
-let kAppsGrillCellHeight: CGFloat = 110.0
 
 class AppsGrillCell: UICollectionViewCell {
     @IBOutlet weak var icon: UIImageView!
@@ -20,7 +19,7 @@ class AppsGrillCell: UICollectionViewCell {
 
     var item: AppsListItem? {
         didSet {
-            self.backgroundColor = UIColor.whiteColor()
+            self.backgroundColor = UIColor(named: .Background)
             appName.text = item?.name
             
             if let imageURL = item?.imageURL {

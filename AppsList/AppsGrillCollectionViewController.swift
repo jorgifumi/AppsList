@@ -24,8 +24,8 @@ class AppsGrillCollectionViewController: UICollectionViewController {
         self.viewModel = viewModel
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSizeMake(200, 200)
-        layout.scrollDirection = UICollectionViewScrollDirection.Vertical
+        layout.itemSize = CGSizeMake(180, 180)
+        layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
         layout.minimumLineSpacing = 30
         layout.minimumInteritemSpacing = 30
         layout.sectionInset = UIEdgeInsetsMake(30, 30, 30, 30)
@@ -45,6 +45,8 @@ class AppsGrillCollectionViewController: UICollectionViewController {
         self.collectionView!.registerNib(nib, forCellWithReuseIdentifier: reuseIdentifier)
         
         self.title = "Top Apps List"
+        
+        self.collectionView!.backgroundColor = UIColor(named: .Background)
         
         let categoryButton = UIBarButtonItem(barButtonSystemItem: .Bookmarks , target: self, action: #selector(AppsGrillCollectionViewController.viewCategories))
         
