@@ -56,7 +56,7 @@ struct AsyncImage {
             dirName = remoteURL.URLByDeletingLastPathComponent?.lastPathComponent else {
               fatalError()
         }
-        return NSURL.documentsDirectoryURL.URLByAppendingPathComponent(dirName + fileName)
+        return NSURL.cachesDirectoryURL.URLByAppendingPathComponent(dirName + fileName)
 
     }
     

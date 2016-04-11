@@ -16,4 +16,8 @@ extension NSURL {
     static var documentsDirectoryURL: NSURL {
         return try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
     }
+    
+    static var cachesDirectoryURL: NSURL {
+        return try! NSFileManager.defaultManager().URLForDirectory(.CachesDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+    }
 }

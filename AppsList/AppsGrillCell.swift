@@ -38,7 +38,6 @@ class AppsGrillCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        icon.layer.cornerRadius = 20
     }
     
     override func prepareForReuse() {
