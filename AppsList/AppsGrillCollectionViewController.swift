@@ -24,11 +24,11 @@ class AppsGrillCollectionViewController: UICollectionViewController {
         self.viewModel = viewModel
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSizeMake(180, 180)
-        layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
-        layout.minimumLineSpacing = 30
-        layout.minimumInteritemSpacing = 30
-        layout.sectionInset = UIEdgeInsetsMake(30, 30, 30, 30)
+        layout.itemSize = CGSizeMake(180, 240)
+        layout.scrollDirection = UICollectionViewScrollDirection.Vertical
+        layout.minimumLineSpacing = 20
+        layout.minimumInteritemSpacing = 20
+        layout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20)
         
         super.init(collectionViewLayout: layout)
     }

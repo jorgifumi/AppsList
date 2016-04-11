@@ -19,7 +19,7 @@ class AppsGrillCell: UICollectionViewCell {
 
     var item: AppsListItem? {
         didSet {
-            self.backgroundColor = UIColor(named: .Background)
+
             appName.text = item?.name
             
             if let imageURL = item?.imageURL {
@@ -28,15 +28,21 @@ class AppsGrillCell: UICollectionViewCell {
                 icon.image = asyncIcon.image
                 
             }
-            icon.layer.cornerRadius = 20
             appPublisher.text = item?.publisherName
             appCategory.text = item?.category
         }
     }
 
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        icon.layer.cornerRadius = 20
+    }
+    
+    override func prepareForReuse() {
+        icon.image = nil
     }
 
 }
